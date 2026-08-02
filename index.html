@@ -66,17 +66,13 @@ body {
 
 
 <script>
+const tree = document.getElementById("tree");
 const music = document.getElementById("music");
 const eggSound = document.getElementById("eggSound");
 
-
-const tree = document.getElementById("tree");
-const music = document.getElementById("music");
-
-
 let clickCount = 0;
 let finished = false;
-let musicStarted = false;
+
 
 
 
@@ -84,16 +80,9 @@ tree.addEventListener("click", function(){
 
 
     
-    if(!musicStarted){
-
-        music.volume = 1;
-
-        music.play();
-
-        musicStarted = true;
-
-    }
-
+   <audio id="music" loop autoplay>
+    <source src="man.mp3" type="audio/mpeg">
+</audio>
 
 
     clickCount++;
@@ -170,13 +159,12 @@ function automaticDialog(){
     if(answer){
 
 
-        alert("You received an Egg.");
-        eggSound.currentTime = 0;
-        eggSound.play();
+       eggSound.currentTime = 0;
+eggSound.play();
 
+alert("You received an Egg.");
 
-        downloadEgg();
-
+downloadEgg();
 
 
     }
