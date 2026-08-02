@@ -55,12 +55,6 @@ body {
     <source src="snd-egg.mp3" type="audio/mpeg">
 </audio>
 
-
-<audio id="music" loop>
-    <source src="man.mp3" type="audio/mpeg">
-</audio>
-
-
 <img id="tree" src="tree-hitbox.png" alt="">
 
 
@@ -80,9 +74,7 @@ tree.addEventListener("click", function(){
 
 
     
-   <audio id="music" loop autoplay>
-    <source src="man.mp3" type="audio/mpeg">
-</audio>
+   
 
 
     clickCount++;
@@ -150,34 +142,27 @@ tree.addEventListener("click", function(){
 
 function automaticDialog(){
 
-
-
     let answer = confirm("He offered you something.");
-
-
 
     if(answer){
 
+        eggSound.currentTime = 0;
+        eggSound.play();
 
-       eggSound.currentTime = 0;
-eggSound.play();
+        alert("You received an Egg.");
 
-alert("You received an Egg.");
-
-downloadEgg();
-
+        downloadEgg();
 
     }
-
     else{
-
 
         alert("Then he needn't be here.");
 
-
     }
 
+    finished = true;
 
+}
 
     finished = true;
 
